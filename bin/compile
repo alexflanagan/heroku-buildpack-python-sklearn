@@ -171,6 +171,9 @@ source $BIN_DIR/steps/scikit-learn
 # Actually install requirements
 /app/.heroku/python/bin/pip install --use-mirrors -r requirements.txt --exists-action=w --src=./.heroku/src | cleanup | indent
 
+# Make 1000% sure we're on latest OO.
+/app/.heroku/python/bin/pip install oneoff/ --upgrade --force-reinstall
+
 # Django collectstatic support.
 source $BIN_DIR/steps/collectstatic
 
