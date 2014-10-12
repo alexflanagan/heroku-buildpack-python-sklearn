@@ -169,6 +169,9 @@ puts-step "Installing dependencies using Pip ($PIP_VERSION)"
 source $BIN_DIR/steps/scikit-learn
 
 # Actually install requirements
+if [ -f requirements.preflight.txt ]; then
+	/app/.heroku/python/bin/pip install --use-mirrors -r requirements.preflight.txt --exists-action=w --src=./.heroku/src | cleanup | indent
+fi
 /app/.heroku/python/bin/pip install --use-mirrors -r requirements.txt --exists-action=w --src=./.heroku/src | cleanup | indent
 
 # Make 1000% sure we're on latest OO.
