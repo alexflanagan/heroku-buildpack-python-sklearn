@@ -30,8 +30,8 @@ if (grep -iq -e "^\s*scikit-learn" requirements.txt) then
     export LIBRARY_PATH=$(pwd)/vendor/lib:$(pwd)/lib/atlas-base:$(pwd)/lib/atlas-base/atlas
     export LD_LIBRARY_PATH=$(pwd)/vendor/lib:$(pwd)/vendor/lib/atlas-base:$(pwd)/vendor/lib/atlas-base/atlas
 
-    puts-step "Installing scikit-learn$TARGET_SKLEARN_VERSION via pip"
-    pip install --use-mirrors scikit-learn$TARGET_SKLEARN_VERSION
+    #puts-step "Installing scikit-learn$TARGET_SKLEARN_VERSION via pip"
+    #pip install --use-mirrors scikit-learn$TARGET_SKLEARN_VERSION
   fi
 
   cd ..
