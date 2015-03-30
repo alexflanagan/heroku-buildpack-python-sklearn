@@ -166,7 +166,7 @@ fi
 puts-step "Installing dependencies using Pip ($PIP_VERSION)"
 
 # Force scikit-learn to use a specific script
-source $BIN_DIR/steps/scikit-learn
+# Nah, don't: source $BIN_DIR/steps/scikit-learn
 
 # Actually install requirements
 if [ -f requirements.preflight.txt ]; then
