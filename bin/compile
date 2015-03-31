@@ -130,16 +130,16 @@ if [ "$FRESH_PYTHON" ] || [[ ! $(pip --version) == *$PIP_VERSION* ]]; then
   WORKING_DIR=$(pwd)
 
   # Prepare it for the REAL real world
-  puts-step "Installing setuputils"
-  cd $ROOT_DIR/vendor/distribute-$DISTRIBUTE_VERSION/
-  python easy_install.py
-  cd $WORKING_DIR
+  #puts-step "Installing setuputils"
+  #cd $ROOT_DIR/vendor/distribute-$DISTRIBUTE_VERSION/
+  #python easy_install.py
+  #cd $WORKING_DIR
 
   # Prepare it for the real world
-  puts-step "Installing Distribute ($DISTRIBUTE_VERSION)"
-  cd $ROOT_DIR/vendor/distribute-$DISTRIBUTE_VERSION/
-  python setup.py install
-  cd $WORKING_DIR
+  #puts-step "Installing Distribute ($DISTRIBUTE_VERSION)"
+  #cd $ROOT_DIR/vendor/distribute-$DISTRIBUTE_VERSION/
+  #python setup.py install
+  #cd $WORKING_DIR
 
   puts-step "Installing Pip ($PIP_VERSION)"
   cd $ROOT_DIR/vendor/pip-$PIP_VERSION/
