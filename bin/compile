@@ -142,8 +142,7 @@ if [ "$FRESH_PYTHON" ] || [[ ! $(pip --version) == *$PIP_VERSION* ]]; then
   #cd $WORKING_DIR
 
   puts-step "Installing Pip ($PIP_VERSION)"
-  cd $ROOT_DIR/vendor/pip-$PIP_VERSION/
-  python setup.py install
+  python $ROOT_DIR/vendor/get-pip.py
   cd $WORKING_DIR
 fi
 
