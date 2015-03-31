@@ -92,7 +92,7 @@ if [ -f .heroku/python-version ]; then
 fi
 
 # Force python.
-SKIP_INSTALL=0
+unset SKIP_INSTALL
 if [ ! "$SKIP_INSTALL" ]; then
   puts-step "Preparing Python runtime ($PYTHON_VERSION)"
   curl http://envy-versions.s3.amazonaws.com/$PYTHON_VERSION.tar.bz2 -s | tar jx # &> /dev/null
