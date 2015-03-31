@@ -129,6 +129,9 @@ fi
 if [ "$FRESH_PYTHON" ] || [[ ! $(pip --version) == *$PIP_VERSION* ]]; then
   WORKING_DIR=$(pwd)
 
+  # Get the crypto.
+  sudo apt-get install openssl
+
   # Prepare it for the REAL real world
   #puts-step "Installing setuputils"
   #cd $ROOT_DIR/vendor/distribute-$DISTRIBUTE_VERSION/
