@@ -93,7 +93,7 @@ done
 
 set +e
 # Create set-aside `.heroku` folder.
-mkdir .heroku &> /dev/null
+mkdir .heroku
 set -e
 
 mkdir -p $(dirname $PROFILE_PATH)
@@ -114,7 +114,7 @@ fi
 unset SKIP_INSTALL
 if [ ! "$SKIP_INSTALL" ]; then
   puts-step "Preparing Python runtime ($PYTHON_VERSION)"
-  curl http://envy-versions.s3.amazonaws.com/$PYTHON_VERSION.tar.bz2 -s | tar jx &> /dev/null
+  curl http://envy-versions.s3.amazonaws.com/$PYTHON_VERSION.tar.bz2 -s | tar jx
   if [[ $? != 0 ]] ; then
     puts-warn "Requested runtime ($PYTHON_VERSION) was not found."
     puts-warn "Aborting.  More info: https://devcenter.heroku.com/articles/python-support"
@@ -138,12 +138,12 @@ if [ "$FRESH_PYTHON" ] || [[ ! $(pip --version) == *$PIP_VERSION* ]]; then
   # Prepare it for the real world
   puts-step "Installing Distribute ($DISTRIBUTE_VERSION)"
   cd $ROOT_DIR/vendor/distribute-$DISTRIBUTE_VERSION/
-  python setup.py install &> /dev/null
+  python setup.py install
   cd $WORKING_DIR
 
   puts-step "Installing Pip ($PIP_VERSION)"
   cd $ROOT_DIR/vendor/pip-$PIP_VERSION/
-  python setup.py install &> /dev/null
+  python setup.py install
   cd $WORKING_DIR
 fi
 
